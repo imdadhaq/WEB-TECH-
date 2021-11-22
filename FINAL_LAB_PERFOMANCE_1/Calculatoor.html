@@ -1,0 +1,122 @@
+<html>
+<head> </head>
+<style>
+
+html, body{
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+}
+
+#calc {
+    width: 320px;
+    height: 470px;
+    padding: 0;
+    margin: 0 auto;
+    border: 1px solid #616c63;
+    background-color: #000;
+}
+
+#screen {
+    width: 320px;
+    height: 170px
+}
+
+button:focus {
+    outline: 0;
+}
+
+.btn-first-row {
+    border-top: 1px solid #191919 !important;
+    background: #000;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}
+
+.btn-first-row:hover {
+    background: #191919;
+}
+
+.btn-first-row:active {
+    background: #333333;
+}
+
+.btn-op {
+    font-size: 32px;
+    font-weight: 100;
+}
+
+.btn-main {
+    background: #1F1F1F;
+}
+
+.btn-main:hover {
+    background: #353535;
+}
+
+.btn-main:active {
+    background: #4C4C4C;
+}
+
+.btn-pad {
+    width: 80px;
+    height: 50px;
+    margin: 0px;
+    padding: 0;
+    border: none;
+    float: left;
+    font-family: Segoe UI;
+    color: #FFF;
+    /*text-decoration: none;*/
+}
+
+.btn-num {
+    font-size: 22px;
+    font-weight: 600; 
+}
+
+.btn-other {
+    font-weight: 400;
+}
+
+.btn-whatfuckingever {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+
+</style>
+
+<body>
+</body>
+<div id="calc">
+    <div id="screen">History + Numbers lol
+        <p id="temp" style="color: white; font-size: 50px;text-align: right;margin: 20px;">0</p>
+    </div>
+    <div id="buttons">
+    
+        <button onclick="clearScr()" class="btn-pad btn-main btn-other">CE</button>
+        <button onclick="resetInput()" class="btn-pad btn-main btn-other">C</button>
+        <button onclick="backspace()" class="btn-pad btn-main btn-other">⌫</button>
+        <button  id="divide" class="btn-pad btn-main btn-op">÷</button>
+        <button class="btn-pad btn-main btn-num">7</button>
+        <button class="btn-pad btn-main btn-num">8</button>
+        <button class="btn-pad btn-main btn-num">9</button>
+        <button id="multiply" class="btn-pad btn-main btn-op">×</button>
+        <button class="btn-pad btn-main btn-num">4</button>
+        <button class="btn-pad btn-main btn-num">5</button>
+        <button class="btn-pad btn-main btn-num">6</button>
+        <button id="subs" class="btn-pad btn-main btn-op">−</button>
+        <button class="btn-pad btn-main btn-num">1</button>
+        <button class="btn-pad btn-main btn-num">2</button>
+        <button class="btn-pad btn-main btn-num">3</button>
+        <button id="sum" class="btn-pad btn-main btn-op">+</button>
+        <button onclick="plusminus()" class="btn-pad btn-main btn-whatfuckingever">±</button>
+        <button class="btn-pad btn-main btn-num">0</button>
+        <button class="btn-pad btn-main btn-num">.</button>
+        <button id="solve" class="btn-pad btn-main btn-op">=</button>
+    </div>
+</div>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
