@@ -11,46 +11,15 @@
                 background-size:100% 100%;
             }
             .but{
-                width: 25px;
-                height: 25px;
+                
                 font-weight: bold;
                 justify-content:center;
                 align-items:center;
+                display:flex;
         
             }
-            .cls{
-                width: 25px;
-                height: 25px;
-                font-weight: bold;
-                justify-content:center;
-                align-items:center;
-        
-                color: #ffffff;
-                background-color: red;
-            }
-            .eql{
-                width: 100%;
-                height: 25px;
-                font-weight: bold;
-                justify-content:center;
-                align-items:center;
-        
-                color: #ffffff;
-                background-color: green;
-            }
-            /*.display{
-                background-color: #101011;
-                border:1px #666 solid; 
-                width: 50vh; 
-                text-align: right; 
-                font-size: 20px;
-                height: 50vh;
-                display: flex;
-                justify-content:center;
-                align-items:center;
-        
-
-            }*/
+          
+            
             .table{
                 width:400px;height:520px;
                 box-shadow:0 0 10px 1px grey;
@@ -62,6 +31,15 @@
                 background-color:#303030;
                 outline:none;
                 border:none;
+                padding:2px 0;
+                color:white;
+            }
+            .layer1{
+                width:inherit;
+                height: 90px;
+                display:flex;
+                justify-content:center;
+
             }
 
             }
@@ -117,6 +95,7 @@
     <tr>
         <td colspan="5"><textarea id="display" class="display"></textarea></td>
     </tr>
+    <div class="layer1">
     <tr>
         <td><input value="7" type="button" class="but"></td>
         <td><input value="8" type="button" class="but"></td>
@@ -124,6 +103,7 @@
         <td><input id="plus" value="+" type="button" class="but"></td>
         <td><input id="cls" value="C" type="button" class="cls"></td>
     </tr>
+        </div>
     <tr>
         <td><input value="4" type="button" class="but"></td>
         <td><input value="5" type="button" class="but"></td>
@@ -143,11 +123,9 @@
         <td><input id="dot" value="." type="button" class="but"></td>
         <td><input id="neg" value="+/-" type="button" class="but"></td>
         <td><input id="div" value="/" type="button" class="but"></td>
-        <td><input id="some" value="" type="button" class="but" disabled></td>
+        <td><input id="div" value="=" type="button" class="but"></td>
     </tr>
-    <tr>
-        <td colspan="5"><input id="eql" value="=" type="button" class="eql"></td>
-    </tr>
+    
 </table>
         </div>
 
