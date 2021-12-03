@@ -4,7 +4,7 @@
 
 	$id = $_REQUEST['id'];
 	$user = getUsersById($id);
-	//print_r($user);
+	
 ?>
 
 <html>

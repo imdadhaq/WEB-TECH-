@@ -43,7 +43,7 @@
 
 	function getUsersById($id){
 		$con = getConnection();
-		$sql= "select * from users where id={$id}";
+		$sql= "select * from user where id={$id}";
 		$result = mysqli_query($con, $sql);
 		$user = mysqli_fetch_assoc($result);
 		return $user;
@@ -51,7 +51,7 @@
 
 	function editUser($user){
 		$con = getConnection();
-		$sql= "update users set username='{$user['username']}', password='{$user['password']}', email='{$user['email']}' where id={$user['id']}";
+		$sql= "update user set username='{$user['username']}', password='{$user['password']}', email='{$user['email']}' where id={$user['id']}";
 		
 		if(mysqli_query($con, $sql)){
 			return true;
@@ -62,7 +62,7 @@
 
 	function deleteUser($id){
 		$con = getConnection();
-		$sql= "delete from users where id={$id}";
+		$sql= "delete from user where id={$id}";
 		
 		if(mysqli_query($con, $sql)){
 			return true;
