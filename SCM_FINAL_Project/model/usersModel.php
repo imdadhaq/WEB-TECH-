@@ -34,6 +34,13 @@
 		return $result;
 	}
 
+	function getAllproduct(){
+		$con = getConnection();
+		$sql= "select * from user";
+		$result = mysqli_query($con, $sql);
+		return $result;
+	}
+
 	function getUsersById($id){
 		$con = getConnection();
 		$sql= "select * from users where id={$id}";

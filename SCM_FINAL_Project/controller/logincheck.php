@@ -14,7 +14,7 @@
 				
 				if($status){
 					setcookie('flag', 'true', time()+3600, '/');
-					header('location: ../views/home.php');
+					header('location: ../views/index.php');
 				}else{
 					echo "invalid username/password";
 				}
