@@ -34,9 +34,21 @@
 		return $result;
 	}
 
+	//This Block is for Product Database and Tabel 
+	function addproduct($user){
+		$con = getConnection();
+		//$sql= "insert into users values('','{$user['username']}', '{$user['password']}', '{$user['email']}')";
+		$sql= "INSERT into `product` values('','{$user['name']}','{$user['cost']}', '{$user['quantity']}', '{$user['details']}')";
+		if(mysqli_query($con, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	function getAllproduct(){
 		$con = getConnection();
-		$sql= "select * from user";
+		$sql= "select * from product";
 		$result = mysqli_query($con, $sql);
 		return $result;
 	}

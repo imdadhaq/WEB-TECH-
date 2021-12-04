@@ -5,7 +5,7 @@
 </head>
 <body>
 
-	<form class="form" method="post" action="../controller/signupcheck.php">
+	<form class="form" name="singup" method="post" action="../controller/signupcheck.php" onsubmit="return validateForm()">
 
 		<h1 class="login-title">Registration</h1>
 		
@@ -25,11 +25,13 @@
 				<tr>
 					<td></td>
 					<td><br><input type="submit" name="submit" value="Submit" class="login-button"></td>
-					<p class="link">Already have an account? <a href="login.html">Log in</a></p>
+					<p class="link"><b>Already have an account? </b><a href="login.html"><br>Log in</a></p>
 
 					
 				</tr>
+				
 			</table>
+			<script type="text/javascript" src="script2.js"></script>
 	</form>
 		
 </body>

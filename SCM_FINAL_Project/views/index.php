@@ -1,9 +1,7 @@
 <?php 
-	//include('header.php');
-	//include_once('header.php');
+	require_once('header.php');
+  require_once('../model/usersModel.php');
 
-	//require('header.php');
-	require_once('header.php')
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -96,6 +94,7 @@
         <i class='bx bx-menu sidebarBtn'></i>
         <span class="dashboard">Dashboard</span>
       </div>
+      
       <div class="search-box">
         <input type="text" placeholder="Search...">
         <i class='bx bx-search' ></i>
@@ -213,78 +212,32 @@
         <div class="top-sales box">
           <div class="title">Top Seling Product</div>
           <ul class="top-sales-details">
-            <li>
-            <a href="#">
-              <img src="images/sunglasses.jpg" alt="">
-              <span class="product">Vuitton Sunglasses</span>
-            </a>
-            <span class="price">$1107</span>
-          </li>
-          <li>
-            <a href="#">
-              <img src="images/jeans.jpg" alt="">
-              <span class="product">Hourglass Jeans </span>
-            </a>
-            <span class="price">$1567</span>
-          </li>
-          <li>
-            <a href="#">
-              <img src="images/nike.jpg" alt="">
-              <span class="product">Nike Sport Shoe</span>
-            </a>
-            <span class="price">$1234</span>
-          </li>
-          <li>
-            <a href="#">
-              <img src="images/scarves.jpg" alt="">
-              <span class="product">Hermes Silk Scarves.</span>
-            </a>
-            <span class="price">$2312</span>
-          </li>
-          <li>
-            <a href="#">
-              <img src="images/blueBag.jpg" alt="">
-              <span class="product">Succi Ladies Bag</span>
-            </a>
-            <span class="price">$1456</span>
-          </li>
-          <li>
-            <a href="#">
-              <img src="images/bag.jpg" alt="">
-              <span class="product">Gucci Womens's Bags</span>
-            </a>
-            <span class="price">$2345</span>
-          <li>
-            <a href="#">
-              <img src="images/addidas.jpg" alt="">
-              <span class="product">Addidas Running Shoe</span>
-            </a>
-            <span class="price">$2345</span>
-          </li>
-<li>
-            <a href="#">
-              <img src="images/shirt.jpg" alt="">
-              <span class="product">Bilack Wear's Shirt</span>
-            </a>
-            <span class="price">$1245</span>
-          </li>
+                              <?php  
+                        $result = getAllproduct();
+                        while ($user = mysqli_fetch_assoc($result)) { 
+                      ?>
+                        <li>
+                        <a href="#">
+                          <img src="images/sunglasses.jpg" alt="">
+                          <span class="product"><?=$user['product_name']?></span>
+                        </a>
+                        <span class="price"><?=$user['cost']?></span>
+                      </li>
+                      
+          
+          <?php } ?>
           </ul>
         </div>
       </div>
     </div>
   </section>
+  
+  <script type="text/javascript" src="script.js"></script>
+ 
+  
 
-  <script>
-   let sidebar = document.querySelector(".sidebar");
-let sidebarBtn = document.querySelector(".sidebarBtn");
-sidebarBtn.onclick = function() {
-  sidebar.classList.toggle("active");
-  if(sidebar.classList.contains("active")){
-  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
-}else
-  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-}
- </script>
+
+ 
 
 </body>
 </html>
