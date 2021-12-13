@@ -7,44 +7,155 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="style1.css">
 	<meta charset="utf-8">
-	<title>User List</title>
+	<title>Order Tracking</title>
+	<link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'rel='stylesheet'>
+	<link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'rel='stylesheet'>
+	<link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'rel='stylesheet'>
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Assistant');
+
+body {
+    background: #eee;
+    font-family: Assistant, sans-serif
+}
+
+.cell-1 {
+    border-collapse: separate;
+    border-spacing: 0 4em;
+    background: #fff;
+    border-bottom: 5px solid transparent;
+    background-clip: padding-box
+}
+
+thead {
+    background: #dddcdc
+}
+
+.toggle-btn {
+    width: 40px;
+    height: 21px;
+    background: grey;
+    border-radius: 50px;
+    padding: 3px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s 0.1s ease-in-out;
+    -moz-transition: all 0.3s 0.1s ease-in-out;
+    -o-transition: all 0.3s 0.1s ease-in-out;
+    transition: all 0.3s 0.1s ease-in-out
+}
+
+.toggle-btn>.inner-circle {
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    -webkit-transition: all 0.3s 0.1s ease-in-out;
+    -moz-transition: all 0.3s 0.1s ease-in-out;
+    -o-transition: all 0.3s 0.1s ease-in-out;
+    transition: all 0.3s 0.1s ease-in-out
+}
+
+.toggle-btn.active {
+    background: blue !important
+}
+
+.toggle-btn.active>.inner-circle {
+    margin-left: 19px
+}
+	</style>
+
     
 </head>
 <body>
 
 	
 
-	<br>
-
-	<table border="1" align="center">
-		<tr>
-			<th>ID</th>
-			<th>NAME</th>
-			<th>PASSWORD</th>
-			<th>EMAIL</th>
-			<th>ACTION</th>
-		</tr>
-
-	<?php  
-		$result = getAllproduct();
-		while ($user = mysqli_fetch_assoc($result)) { 
-	?>
-		<tr>
-			<td><?=$user['id']?></td>
-			<td><?=$user['username']?></td>
-			<td><?=$user['password']?></td>
-			<td><?=$user['email']?></td>
-			<td>
-				<a href="edit.php?id=<?=$user['id']?>"> EDIT</a> | 
-				<a href="delete.php?id=<?=$user['id']?>"> DELETE</a> 
-			</td>
-		</tr>
-	<?php } ?>
-   
-	</table>
+<div class="container mt-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10">
+            <div class="rounded">
+                <div class="table-responsive table-borderless">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="text-center">
+                                    <div class="toggle-btn">
+                                        <div class="inner-circle"></div>
+                                    </div>
+                                </th>
+                                <th>Order #</th>
+                                <th>Company name</th>
+                                <th>status</th>
+                                <th>Total</th>
+                                <th>Created</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-body">
+                            <tr class="cell-1">
+                                <td class="text-center">
+                                    <div class="toggle-btn">
+                                        <div class="inner-circle"></div>
+                                    </div>
+                                </td>
+                                <td>#SO-13487</td>
+                                <td>Gasper Antunes</td>
+                                <td><span class="badge badge-success">Fullfilled</span></td>
+                                <td>$2674.00</td>
+                                <td>Today</td>
+                                <td><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                            </tr>
+                            <tr class="cell-1">
+                                <td class="text-center">
+                                    <div class="toggle-btn">
+                                        <div class="inner-circle"></div>
+                                    </div>
+                                </td>
+                                <td>#SO-13453</td>
+                                <td>Aartsen van</td>
+                                <td><span class="badge badge-info">Confirmed</span></td>
+                                <td>$3454.00</td>
+                                <td>Yesterday</td>
+                                <td><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                            </tr>
+                            <tr class="cell-1">
+                                <td class="text-center">
+                                    <div class="toggle-btn">
+                                        <div class="inner-circle"></div>
+                                    </div>
+                                </td>
+                                <td>#SO-13498</td>
+                                <td>Trashes Habard</td>
+                                <td><span class="badge badge-danger">Partially shipped</span></td>
+                                <td>$6274.00</td>
+                                <td>May 12,2020</td>
+                                <td><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                            </tr>
+                            <tr class="cell-1">
+                                <td class="text-center">
+                                    <div class="toggle-btn">
+                                        <div class="inner-circle"></div>
+                                    </div>
+                                </td>
+                                <td>#SO-16499</td>
+                                <td>Samban Hubart</td>
+                                <td><span class="badge badge-success">Fullfilled</span></td>
+                                <td>$6375.00</td>
+                                <td>May 11,2020</td>
+                                <td><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <center>	
-		<a href="index.php">Back </a> |
+		<a href="index.php">Back </a> 
 		<li class="log_out">
         <a href="../controller/logout.php">
             <i class='bx bx-log-out'></i>
@@ -52,5 +163,14 @@
           </a>
         </li>
 	</center>
+<script>
+	$(document).ready(function(){
+
+$('.toggle-btn').click(function() {
+$(this).toggleClass('active').siblings().removeClass('active');
+});
+
+});
+	</script>
 </body>
 </html>

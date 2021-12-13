@@ -8,16 +8,18 @@
         $cost           = $_POST['cost'];
 		$quantity 	    = $_POST['quantity'];
 		$details 		= $_POST['details'];
+		$status = "deliverd";
 
 		if($_POST['productname'] != ""){
 			if($_POST['quantity'] != ""){
 				if($_POST['details'] != ""){
 
 					$user = [
-								'name'=> $productname, 
+								'product_name'=> $productname, 
                                 'cost'=>$cost,
 								'quantity'=>$quantity, 
 								'details'=> $details, 
+								'status' => $status,
                                 
 								
 							];
@@ -32,13 +34,13 @@
 					
 
 				}else{
-					echo "Invalid email...";
+					echo "Invalid ...";
 				}	
 			}else{
-				echo "Invalid password...";
+				echo "Invalid...";
 			}
 		}else{
-			echo "Invalid username...";
+			echo "Invalid...";
 		}
 	}
 ?>

@@ -35,10 +35,11 @@
 	}
 
 	//This Block is for Product Database and Tabel 
+	//This Block is for Product Database and Tabel 
 	function addproduct($user){
 		$con = getConnection();
 		//$sql= "insert into users values('','{$user['username']}', '{$user['password']}', '{$user['email']}')";
-		$sql= "INSERT into `product` values('','{$user['name']}','{$user['cost']}', '{$user['quantity']}', '{$user['details']}')";
+		$sql= "INSERT into `product` values('','{$user['product_name']}','{$user['cost']}', '{$user['quantity']}', '{$user['details']}', '{$user['status']}')";
 		if(mysqli_query($con, $sql)){
 			return true;
 		}else{
@@ -51,6 +52,14 @@
 		$sql= "select * from product";
 		$result = mysqli_query($con, $sql);
 		return $result;
+	}
+
+	function getProductByname($data){
+		$con = getConnection();
+		$sql= "select * from product where product_name={$data}";
+		$result = mysqli_query($con, $sql);
+		$user = mysqli_fetch_assoc($result);
+		return $user;
 	}
 
 	function getUsersById($id){
@@ -75,6 +84,36 @@
 	function deleteUser($id){
 		$con = getConnection();
 		$sql= "delete from user where id={$id}";
+		
+		if(mysqli_query($con, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	function getProductById($id){
+		$con = getConnection();
+		$sql= "select * from product where id={$id}";
+		$result = mysqli_query($con, $sql);
+		$user = mysqli_fetch_assoc($result);
+		return $user;
+	}
+
+	function editProduct($user){
+		$con = getConnection();
+		$sql= "update product set product_name='{$user['productname']}',cost='{$user['cost']}', quantity='{$user['quatity']}', details='{$user['details']}' where id={$user['id']}";
+		
+		if(mysqli_query($con, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	function deleteProduct($id){
+		$con = getConnection();
+		$sql= "delete from product where id={$id}";
 		
 		if(mysqli_query($con, $sql)){
 			return true;
